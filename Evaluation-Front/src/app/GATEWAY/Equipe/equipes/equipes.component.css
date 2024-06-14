@@ -1,0 +1,141 @@
+
+  .card {
+    margin-bottom: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+  }
+  
+  .card-text {
+    margin-bottom: 10px;
+  }
+  
+  .card-subtitle {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+  
+  .list-group-item {
+    border: none;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  .no-equipes {
+    font-style: italic;
+  }
+
+  .custom-modal .modal-dialog {
+    max-width: 1200px;
+    margin: auto; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .custom-modalQuestions .modal-dialog {
+    max-width: 1100px;
+    margin: auto; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-fade.custom-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);  
+  }
+  
+  .a {
+    text-decoration: none;
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  .a:hover {
+    text-decoration: underline; 
+  }
+
+  #container_search {
+    display: flex;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Déplace la zone de recherche à droite */
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    flex-grow: 2;
+    margin-right: 10px;
+  }
+  
+  input[type="text"], button {
+    height: 30px; /* Réduit la hauteur de la zone de recherche et du bouton */
+    padding: 5px 10px; /* Ajuste le rembourrage */
+    border: 1px solid #ccc; /* Ajoute une bordure */
+    border-radius: 5px; /* Ajoute des coins arrondis */
+  }
+  
+  .h3{
+    color: #999; /* Couleur de texte gris */
+    font-style: italic; /* Style italique */
+    text-align: center;
+  }
+
+  h3{
+    margin-top: 5px;
+    text-align: center;
+  }
+  
+  .list-group-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    transition: box-shadow 0.3s ease;
+    margin-bottom: 5px;
+}
+
+/* Effet de survol */
+.list-group-item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour le titre */
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+/* Style pour la description */
+.card-text {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.h3{
+    color: #999; /* Couleur de texte gris */
+    font-style: italic; /* Style italique */
+    text-align: center;
+  }
+
+/* Réactivité */
+@media (max-width: 768px) {
+    .list-group-item {
+        padding: 10px;
+    }
+    .card-title {
+        font-size: 18px;
+    }
+    .card-text {
+        font-size: 14px;
+    }
+}
+

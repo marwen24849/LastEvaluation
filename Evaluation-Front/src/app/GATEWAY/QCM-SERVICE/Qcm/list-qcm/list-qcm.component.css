@@ -1,0 +1,135 @@
+table.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+table.table thead th,
+table.table tbody td,
+table.table th {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table.table thead th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+table.table tbody td:nth-child(2) {
+  font-weight: bold;
+  color: #333;
+}
+
+table.table tbody td:nth-child(4) {
+  color: #009933; 
+}
+
+table.table tbody tr:hover {
+  background-color: #eee;
+}
+
+button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button:nth-child(1) {
+  background-color: #3498db; 
+  color: #fff; 
+}
+
+button:nth-child(3) {
+  background-color: #e74c3c; 
+  color: #fff; 
+}
+
+button:hover {
+  opacity: 0.8; 
+}
+
+.custom-modal .modal-dialog {
+  max-width: 1200px;
+  margin: auto; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-fade.custom-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+}
+
+.a {
+  text-decoration: none;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.a:hover {
+  text-decoration: underline; 
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.invalid-feedback {
+  display: block; 
+  color: #dc3545;
+}
+
+.form-control {
+  border-radius: 20px;
+}
+
+form {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+}
+
+select.form-control {
+  margin-top: 5px;
+  border-radius: 20px;
+}
+
+label {
+  margin-bottom: 5px; 
+}
+
+.btn {
+  margin-right: 5px;
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.action-buttons button {
+  margin-left: 2px;
+}
+
+.action-buttons button:last-child {
+  margin-right: 0;
+}
+
+.action-buttons a {
+  margin-right: 2px;
+  text-decoration: none;
+  color: blue;
+}

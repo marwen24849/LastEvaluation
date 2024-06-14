@@ -1,0 +1,56 @@
+.container {
+    margin-top: 50px; /* Espacement du haut */
+  }
+  
+  .search-bar {
+    margin-bottom: 20px; /* Espacement entre la barre de recherche et la liste des compétences */
+  }
+  
+  .table-responsive {
+    max-height: 400px; /* Hauteur maximale de la table */
+    overflow-y: auto; /* Activer le défilement vertical si nécessaire */
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+
+  .custom-modal .modal-content {
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-modal .modal-header {
+    background-color: #007bff;
+    color: #fff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  
+  .custom-modal .modal-body {
+    padding: 30px;
+  }
+  
+  .custom-modal .modal-body .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .custom-modal .modal-body .form-control {
+    border-radius: 20px;
+  }
+  
+  .custom-modal .modal-body .btn-primary {
+    border-radius: 20px;
+  }
+  
+  .custom-modal .modal-body label {
+    font-weight: bold;
+  }
+  

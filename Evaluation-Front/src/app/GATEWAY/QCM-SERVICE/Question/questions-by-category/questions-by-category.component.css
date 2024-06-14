@@ -1,0 +1,124 @@
+/* Overall layout and spacing */
+body {
+    font-family: sans-serif; /* Set a base font */
+    margin: 40px; /* Add overall spacing */
+  }
+  
+  /* Styling for the category selection section */
+  div {
+    text-align: center;
+    margin: 0 auto;
+    width: 400px; /* Adjust width as needed */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 16px;
+    color: #495057;
+    cursor: pointer;
+  }
+  
+  select:hover {
+    border-color: #80bdff;
+  }
+  
+  select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  /* Styling for the questions list section */
+  .container {
+    margin-top: 40px; /* Add spacing between sections */
+    width: 90%; /* Adjust width as needed */
+  }
+  
+  table.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+  }
+  
+  table.table thead th,
+  table.table tbody td,
+  table.table th {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left; /* Adjust alignment if needed */
+  }
+  
+  table.table thead th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Optional styling for specific columns */
+  table.table tbody td:nth-child(2) { /* Target question title column */
+    font-weight: bold;
+    color: #333;
+  }
+  
+  table.table tbody td:nth-child(4) { /* Target correct answer column */
+    color: #009933; /* Green for correct answer */
+  }
+  
+  /* Hover effect for rows */
+  table.table tbody tr:hover {
+    background-color: #eee;
+  }
+  option {
+    padding: 8px 12px;
+    font-size: 16px;
+    color: #495057;
+    background-color: #fff;
+  }
+  
+  option:hover {
+    background-color: #f8f9fa;
+  }
+  button {
+    /* Base styles for all buttons */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer; /* Indicate interactivity */
+    margin-right: 10px; /* Add spacing between buttons */
+  }
+  
+  /* Styling for "Modifier" button */
+  button:nth-child(1) {  /* Targets the first button */
+    background-color: #3498db; /* Blue */
+    color: #fff; /* White text */
+  }
+  
+  /* Styling for "Supprimer" button */
+  button:nth-child(2) {  /* Targets the second button */
+    background-color: #e74c3c; /* Red */
+    color: #fff; /* White text */
+  }
+  
+  /* Optional hover effect for both buttons */
+  button:hover {
+    opacity: 0.8; /* Slightly reduce opacity on hover */
+  }
+  

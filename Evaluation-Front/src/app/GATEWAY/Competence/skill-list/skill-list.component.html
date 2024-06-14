@@ -1,0 +1,37 @@
+<div class="container mt-4">
+    <h3 class="text-center mb-4">Liste des compétences</h3>
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div id="container_search" class="search-bar mb-3">
+          <input type="text" class="form-control" placeholder="Rechercher par nom de compétence" name="skillname" [(ngModel)]="searchSkillname" (ngModelChange)="filteredSkills()">
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Nom</th>
+                <th scope="col">Description</th>
+                <th scope="col" class="text-center">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let skill of getItems()">
+                <td>{{ skill.name }}</td>
+                <td>{{ skill.description }}</td>
+                <td class="text-center">
+                  <button class="btn btn-sm btn-primary mr-2" (click)="editSkill(skill)"><i class="bi bi-pencil"></i></button>
+                  <button class="btn btn-sm btn-danger" (click)="deleteSkill(skill)"><i class="bi bi-trash"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="pagination justify-content-end">
+            <span>{{currentPage}} / {{totalPages}}</span>
+            <button (click)="prevPage()" [disabled]="startIndex === 0">Précédent</button>
+            <button (click)="nextPage()" [disabled]="endIndex >= skills.length">Suivant</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

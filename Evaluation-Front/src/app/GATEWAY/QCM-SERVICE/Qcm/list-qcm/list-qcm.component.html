@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form  class="needs-validation" #questionForm="ngForm" novalidate>
+        <div class="form-group">
+          <label for="category">Catégorie:</label>
+          <select class="form-select" id="category"  [(ngModel)]="selectedCategory" name="category" (change)="getQuizByCategory()" required>
+            <option value="" disabled selected>Choisissez une catégorie</option>
+            <option *ngFor="let category of categories" [value]="category"  name="option">{{ category }}</option>
+          </select>
+          <div class="invalid-feedback" *ngIf="questionForm.submitted && !quiz.category">Veuillez sélectionner une catégorie.</div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+    <h3 class="text-center mb-4">Quiz List</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Titre</th>
+        <th scope="col">Catégorie</th>
+        <th scope="col">Pourcentage de réussite</th>
+        <th scope="col">Niveau de difficulté</th>
+        <th scope="col">Questions</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let quiz of quiz">
+        <th scope="row">{{ quiz.id }}</th>
+        <td>{{ quiz.title}}</td>
+        <td>{{ quiz.category}}</td>
+        <td>{{ quiz.minimumSuccessPercentage}}</td>
+        <td>{{ quiz.difficultylevel}}</td>
+        <td>
+          <a class="a" data-toggle="modal" data-target="#exampleModal" (click)="aff(quiz.questions,quiz.id)">Questions</a>
+      </td>
+      <td>
+          <div class="action-buttons">
+              <a class="a" [routerLink]="['/AddQustionQcm',quiz.id]">Ajouter une question</a>
+              <button class="btn btn-sm btn-warning mr-2" [routerLink]="['/updateQuiz',quiz.id]"><i class="bi bi-pencil"></i>
+              </button>
+              <button class="btn btn-danger" (click)="supprimer(quiz.id, quiz.questions)"><i class="bi bi-trash"></i></button>
+          </div>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+  <div class="modal fade custom-modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Questions List</h5>
+        </div>
+        <div class="modal-body">
+            <div class="container">
+                <ng-container *ngIf="questions.length != 0">
+                <h3 class="text-center mb-4">Liste Questions</h3>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Question</th>
+                    <th scope="col">Options</th>
+                    <th scope="col">Correct Answer</th>
+                    <th scope="col">Difficulty Level</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let question of questions">
+                    <th scope="row">{{ question.id }}</th>
+                    <td>{{ question.questionTitle }}</td>
+                    <td>
+                      <ul>
+                        <li>{{ question.option1 }}</li>
+                        <li>{{ question.option2 }}</li>
+                        <li>{{ question.option3 }}</li>
+                        <li>{{ question.option4 }}</li>
+                      </ul>
+                    </td>
+                    <td>{{ question.rightAnswer }}</td>
+                    <td>{{ question.difficultylevel }}</td>
+                    <td>{{ question.category }}</td>
+                    <td>{{ question.score }}</td>
+                    <td>
+                        <button [routerLink]="['/updatQuestion',question.id]" data-dismiss="modal" class="btn btn-sm btn-warning mr-2"><i class="bi bi-pencil"></i></button>
+                        <button class="btn btn-danger" (click)="sup(question.id)"><i class="bi bi-trash"></i></button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </ng-container>
+            <ng-container *ngIf="questions && questions.length == 0">
+                <h2 class="vid">Pas Des Question Pour Cette Quiz</h2>
+            </ng-container>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

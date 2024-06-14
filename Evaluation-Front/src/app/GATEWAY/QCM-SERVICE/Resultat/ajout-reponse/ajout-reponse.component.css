@@ -1,0 +1,64 @@
+
+.quiz-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2%;
+  }
+  
+  /* Style pour chaque question */
+  .question {
+    margin-bottom: 20px;
+  }
+  
+  /* Style pour le titre de la question */
+  .question-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Style pour chaque option */
+  .option {
+    margin-bottom: 10px;
+  }
+  
+  /* Style pour les labels des options */
+  .option label {
+    font-size: 16px;
+    margin-left: 5px;
+  }
+  
+  /* Style pour le bouton de soumission */
+  .submit-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Style pour le bouton de soumission au survol */
+  .submit-button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Style pour les input radio */
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+  .quiz-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333; /* Couleur du texte */
+  }
+  
+ 

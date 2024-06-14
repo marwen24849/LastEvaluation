@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h3 class="text-center mb-4">Ajouter une compétence</h3>
+        <form (ngSubmit)="save()" class="needs-validation" #skillForm="ngForm" novalidate>
+          <div class="form-group">
+            <label for="name">Nom de la compétence :</label>
+            <input type="text" class="form-control" id="name" [(ngModel)]="skill.name" name="name" required>
+            <div class="invalid-feedback" *ngIf="skillForm.submitted && !skill.name">Veuillez fournir le nom de la compétence.</div>
+          </div>
+          <div class="form-group">
+            <label for="description">Description :</label>
+            <textarea class="form-control" id="description" rows="3" [(ngModel)]="skill.description" name="description" required></textarea>
+            <div class="invalid-feedback" *ngIf="skillForm.submitted && !skill.description">Veuillez fournir la description de la compétence.</div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Ajouter</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

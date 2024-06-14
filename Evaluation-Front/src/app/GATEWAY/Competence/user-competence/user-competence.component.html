@@ -1,0 +1,54 @@
+<div class="container mt-4">
+    <h3 class="text-center mb-4">Compétences disponibles</h3>
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+        <div id="container_search" class="search-bar mb-3">
+          <input type="text" class="form-control" placeholder="Rechercher par nom de compétence" name="skillName" [(ngModel)]="searchSkillName" (ngModelChange)="filterSkills()">
+        </div>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Nom de compétence</th>
+                <th scope="col">Description</th>
+                <th scope="col" class="text-center">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let skill of filteredSkills">
+                <td>{{ skill.name }}</td>
+                <td>{{ skill.description }}</td>
+                <td class="text-center">
+                  <button class="btn btn-sm btn-primary mr-2" data-toggle="modal" data-target="#exampleModal1" (click)="addSkillToUser(skill)">Ajouter</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+  <div class="modal fade custom-modal" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Niveau</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form (submit)="submitLevel()">
+            <div class="form-group">
+              <label for="level">Niveau :</label>
+              <input type="number" class="form-control" id="level" [(ngModel)]="niveau" name="level" min="1" max="20" required>
+            </div>
+            <button type="submit" class="btn btn-primary" data-dismiss="modal" aria-label="Close"(click)="submitLevel()">Envoyer</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

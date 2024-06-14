@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: Micro-service-Badge
+
+
+    management:
+      endpoints:
+        web:
+          exposure:
+            include: refresh
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    url: jdbc:mysql://localhost:3379/Badge
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver

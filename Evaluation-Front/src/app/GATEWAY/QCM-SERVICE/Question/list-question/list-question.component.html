@@ -1,0 +1,66 @@
+<div class="containerSelect">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      
+      <form class="needs-validation" #questionForm="ngForm" novalidate>
+        <div class="form-group">
+          <label for="category">Choisissez une catégorie :</label>
+          <select class="form-select" id="category"  [(ngModel)]="selectedCategory" name="category" (change)="getQuestionsByCategory()" required>
+            <option value="" disabled selected>Choisissez une catégorie</option>
+            <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+          </select>
+          <div class="invalid-feedback" *ngIf="questionForm.submitted" >Veuillez sélectionner une catégorie.</div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <h3 class="text-center mb-4">Liste des questions</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Question</th>
+        <th scope="col">Options</th>
+        <th scope="col">Correct Answer</th>
+        <th scope="col">Difficulty Level</th>
+        <th scope="col">Category</th>
+        <th scope="col">Score</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let question of getItems()">
+        <th scope="row">{{ question.id }}</th>
+        <td>{{ question.questionTitle }}</td>
+        <td>
+          <ul>
+            <li>{{ question.option1 }}</li>
+            <li>{{ question.option2 }}</li>
+            <li>{{ question.option3 }}</li>
+            <li>{{ question.option4 }}</li>
+          </ul>
+        </td>
+        <td>{{ question.rightAnswer }}</td>
+        <td>{{ question.difficultylevel }}</td>
+        <td>{{ question.category }}</td>
+        <td>{{ question.score }}</td>
+        <td>
+          <div class="btntd">
+          <button [routerLink]="['/updatQuestion', question.id]" class="btn modifier-btn btn-sm"><i class="bi bi-pencil"></i></button>
+          <button (click)="supprimer(question.id)" class="btn supprimer-btn btn-sm"><i class="bi bi-trash"></i></button>
+        </div>
+        </td>
+        
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination justify-content-end">
+    <span>{{currentPage}} / {{totalPages}}</span>
+    <button (click)="prevPage()" [disabled]="startIndex === 0">Précédent</button>
+    <button (click)="nextPage()" [disabled]="endIndex >= questions.length">Suivant</button>
+  </div>
+</div>

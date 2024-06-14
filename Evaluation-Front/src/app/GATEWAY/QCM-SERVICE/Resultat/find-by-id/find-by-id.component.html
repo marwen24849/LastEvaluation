@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h5>Résultat du Quiz</h5>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <h6>Détails du Quiz</h6>
+            <hr>
+            <div><strong>Titre du Quiz:</strong> {{ resultat.quiz.title }}</div>
+            <div><strong>Catégorie:</strong> {{ resultat.quiz.category }}</div>
+            <div><strong>Niveau de difficulté:</strong> {{ resultat.quiz.difficultylevel }}</div>
+            <div><strong>Pourcentage de réussite minimum:</strong> {{ resultat.quiz.minimumSuccessPercentage }}%</div>
+          </div>
+          <div class="col-md-6">
+            <h6>Résultat</h6>
+            <hr>
+            <div><strong>Score:</strong> {{ resultat.resultat.score }}</div>
+            <div><strong>Pourcentage de réussite:</strong> {{ resultat.resultat.percentage }}%</div>
+            <div><strong>Résultat:</strong> {{ resultat.resultat.resultat ? 'Réussi' : 'Échoué' }}</div>
+          </div>
+        </div>
+        <hr>
+        <h6>Réponses</h6>
+        <div *ngFor="let response of resultat.responses" class="response">
+          <div><strong>Question:</strong> {{ response.question }}</div>
+          <div><strong>Réponse:</strong> {{ response.answer }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

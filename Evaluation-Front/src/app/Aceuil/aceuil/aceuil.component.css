@@ -1,0 +1,197 @@
+/* Body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Header styles */
+  .lab {
+    border-radius: 10px;
+    
+    background-image: url(32.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+  
+  /* Hero section styles */
+  .hero {
+    background-color: #f8f9fa;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #212529;
+  }
+  
+  .hero p {
+    font-size: 1.25rem;
+    color: #6c757d;
+  }
+  
+  .btn-get-started,
+  .btn-watch-video {
+    font-size: 1.25rem;
+    margin-top: 20px;
+  }
+  
+  /* Features section styles */
+  #features {
+    background-color: #ffffff;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  
+  .feature {
+    font-size: 2.5rem;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+  }
+  
+  .feature i {
+    color: #ffffff;
+  }
+  
+  .feature.bg-primary {
+    background-color: #007bff;
+  }
+  
+  .feature.bg-secondary {
+    background-color: #6c757d;
+  }
+  
+  .feature.bg-success {
+    background-color: #28a745;
+  }
+  
+  .feature.bg-danger {
+    background-color: #dc3545;
+  }
+  
+  .feature.bg-warning {
+    background-color: #ffc107;
+  }
+  
+  .feature.bg-info {
+    background-color: #17a2b8;
+  }
+  
+  .feature.bg-light {
+    background-color: #f8f9fa;
+  }
+  
+  .feature.bg-dark {
+    background-color: #343a40;
+  }
+  
+  /* Pricing section styles */
+  #pricing {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  
+  .pricing-card {
+    margin-bottom: 30px;
+  }
+  
+  .pricing-card .card-body {
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .pricing-card .display-4 {
+    font-size: 2.5rem;
+  }
+  
+  .pricing-card .list-unstyled {
+    padding-left: 0;
+    list-style: none;
+  }
+  
+  .pricing-card .list-unstyled li {
+    padding: 10px 0;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .pricing-card .list-unstyled li:last-child {
+    border-bottom: none;
+  }
+  
+  .pricing-card .btn {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  /* Testimonials section styles */
+  #testimonials {
+    background-color: #f8f9fa;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  
+  .testimonial {
+    border: 1px solid #dee2e6;
+    padding: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .testimonial .bi {
+    font-size: 2rem;
+    color: #007bff;
+  }
+  
+  .testimonial p {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+  
+  .testimonial .small {
+    font-size: 0.875rem;
+  }
+  
+  /* Contact section styles */
+  #contact {
+    background-color: #ffffff;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  
+  .contact-form .form-floating {
+    margin-bottom: 20px;
+  }
+  
+  .contact-form .form-floating label {
+    color: #212529;
+  }
+  
+  .contact-form .form-floating input,
+  .contact-form .form-floating textarea {
+    border-radius: 0;
+  }
+  
+  .contact-form .form-floating textarea {
+    height: 150px;
+  }
+  
+  .contact-form .btn {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-align: center;
+  }
+  

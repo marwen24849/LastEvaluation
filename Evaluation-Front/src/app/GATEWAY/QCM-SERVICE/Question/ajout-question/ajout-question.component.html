@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h3 class="text-center mb-4">Créer Question</h3>
+        <form (ngSubmit)="onSubmit()" class="needs-validation" #questionForm="ngForm" novalidate>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="question.questionTitle" name="questionTitle" required placeholder="Question Title">
+            <div class="invalid-feedback" *ngIf="questionForm.submitted && !question.questionTitle">Please provide a question title.</div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="question.option1" name="option1" required placeholder="Option 1">
+            <div class="invalid-feedback" *ngIf="questionForm.submitted && !question.option1">Please provide option 1.</div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="question.option2" name="option2" required placeholder="Option 2">
+            <div class="invalid-feedback" *ngIf="questionForm.submitted && !question.option2">Please provide option 2.</div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="question.option3" name="option3" required placeholder="Option 3">
+            <div class="invalid-feedback" *ngIf="questionForm.submitted && !question.option3">Please provide option 3.</div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="question.option4" name="option4" required placeholder="Option 4">
+            <div class="invalid-feedback" *ngIf="questionForm.submitted && !question.option4">Please provide option 4.</div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="question.rightAnswer" name="rightAnswer" required placeholder="Right Answer">
+            <div class="invalid-feedback" *ngIf="questionForm.submitted && !question.rightAnswer">Please provide the right answer.</div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="question.difficultylevel" name="difficultyLevel" required placeholder="Difficulty Level">
+            <div class="invalid-feedback" *ngIf="questionForm.submitted && !question.difficultylevel">Please provide the difficulty level.</div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="question.category" name="category" required placeholder="Category">
+            <div class="invalid-feedback" *ngIf="questionForm.submitted && !question.category">Please provide the category.</div>
+          </div>
+          <div class="form-group">
+            <input type="number" class="form-control" [(ngModel)]="question.score" name="score" required placeholder="Score">
+            <div class="invalid-feedback" *ngIf="questionForm.submitted && !question.score">Please provide the score.</div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,129 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card profile-card">
+        <div class="card-body text-center">
+          <img src="https://via.placeholder.com/150" alt="Profile Picture" class="img-fluid rounded-circle mb-3">
+          <h5 class="card-title">{{username}}</h5>
+          <p class="card-text text-muted">{{UsersProfile.level}}</p>
+          <p class="card-text text-muted">{{UsersProfile.yearsexperience}} years of experience</p>
+          <a href="#" class="btn btn-primary" routerLink="/user-competence">Ajouter une compétence</a>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Education</h5>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Formation</th>
+                <th scope="col">Certification</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let formation of UsersProfile.formations">
+                <td>{{ formation.title }}</td>
+                <td>{{ formation.certification }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Badges</h5>
+          <div class="row">
+            <div class="col-md-6" *ngFor="let badge of badges">
+              <div class="offer" [ngClass]="getBadgeClass(badge.type)">
+                <div class="shape">
+                  <div class="shape-text">
+                    {{ badge.type }}
+                  </div>
+                </div>
+                <div class="offer-content">
+                  <h4 class="lead">
+                    {{ badge.name }}
+                  </h4>
+                  <hr>
+                  <p>
+                    {{ badge.description }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+    </div>
+
+    <div class="col-md-8">
+      <div class="card skill-table">
+        <div class="card-body">
+          <h5 class="card-title">Skills</h5>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Skill</th>
+                <th scope="col">Level</th>
+                <th scope="col">Years of Experience</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let comp of competence">
+                <td (click)="onSelectskill(comp)">{{ comp.skill.name }}</td>
+                <td (click)="onSelectskill(comp)">
+                  {{ getLevelLabel(comp.level) }}
+                </td>
+                <td (click)="onSelectskill(comp)">{{ callyersex(comp.dateCreation) }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <button hidden="true" type="button" id="trace-modal" class="btn btn-primary" data-toggle="modal"
+        data-target="#trace-info-modal"></button>
+      <div class="card mt-4">
+        <div class="card-body text-center"> <div class="card" style="display: inline-block;">
+            <div class="card-body" style="width: 400px; height: 400px; margin: auto;">
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="trace-info-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Compétence Detail</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body right-left-margin">
+              
+                <ul class="list-group">
+                    <li class="list-group-item"><strong>Nom de la compétence:</strong> {{ skill?.skill.name }}</li>
+                    <li class="list-group-item"><strong>Description:</strong> {{ skill?.skill.description }}</li>
+                    <li class="list-group-item"><strong>Niveau:</strong> {{ skill?.level }}</li>
+                    <li class="list-group-item"><strong>Date de création:</strong> {{ skill?.dateCreation | date: 'yyyy/MM/dd' }}</li>
+                    <li class="list-group-item"><strong>Valide:</strong> {{ skill?.valide ? 'Oui' : 'Non' }}</li>
+                </ul>
+            
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

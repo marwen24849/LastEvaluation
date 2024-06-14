@@ -1,0 +1,32 @@
+<div class="container">
+    <br>
+    <h3 class="h3">Quiz</h3>
+    <br>
+    <div *ngIf="Quiz && Quiz.length > 0; else noQuizzes">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Catégorie</th>
+                    <th scope="col">Pourcentage de réussite minimum</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let quiz of Quiz">
+                    <td>{{ quiz.title }}</td>
+                    <td>{{ quiz.category }}</td>
+                    <td>{{ quiz.minimumSuccessPercentage }}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" [routerLink]="['/AddResponse',quiz.id]">
+                            Passer le Quiz
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <ng-template #noQuizzes>
+        <h3 class="h3">Aucun quiz disponible pour le moment.</h3>
+    </ng-template>
+</div>

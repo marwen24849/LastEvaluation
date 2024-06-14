@@ -1,0 +1,105 @@
+/* Table styling */
+
+table.table {
+    width: 100%; /* Adjust width as needed */
+    border-collapse: collapse;
+    margin: 20px auto;
+  }
+  
+  table.table thead th,
+  table.table tbody td,
+  table.table th {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left; /* Adjust alignment if needed */
+  }
+  
+  table.table thead th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  /* Optional styling for specific columns */
+  
+  table.table tbody td:nth-child(2) { /* Target question title column */
+    font-weight: bold;
+    color: #333;
+  }
+  
+  table.table tbody td:nth-child(4) { /* Target right answer column */
+    color: #009933; /* Green for correct answer */
+  }
+  
+  /* Hover effect for rows (optional) */
+  
+  table.table tbody tr:hover {
+    background-color: #eee;
+  }
+  button {
+    /* Base styles for all buttons */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer; /* Indicate interactivity */
+    margin-right: 10px; /* Add spacing between buttons */
+  }
+  
+  /* Styling for "Modifier" button */
+  button:nth-child(1) {  /* Targets the first button */
+    background-color: #3498db; /* Blue */
+    color: #fff; /* White text */
+  }
+  
+  /* Styling for "Supprimer" button */
+  button:nth-child(2) {  /* Targets the second button */
+    background-color: #e74c3c; /* Red */
+    color: #fff; /* White text */
+  }
+  
+  /* Optional hover effect for both buttons */
+  button:hover {
+    opacity: 0.8; /* Slightly reduce opacity on hover */
+  }
+  .vid{
+    color: #333; /* Couleur du texte */
+  font-size: 24px; /* Taille de la police */
+  font-weight: bold; /* Gras */
+  text-align: center; /* Alignement centré */
+  margin-top: 20px; /* Marge supérieure */
+  margin-bottom: 20px;
+}
+.container {
+  margin-top: 50px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.invalid-feedback {
+  display: block; 
+  color: #dc3545;
+}
+.form-control {
+  border-radius: 20px;
+}
+select.form-control {
+  margin-top: 5px;
+  border-radius: 20px;
+}
+
+label {
+  margin-bottom: 5px; 
+}
+form {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+  
+  
+  

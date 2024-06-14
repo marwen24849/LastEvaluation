@@ -1,0 +1,47 @@
+<div>
+    <h3 class="text-center mb-4">List Questions Par catégorie</h3>
+    <label for="categorySelect">Choisissez une catégorie :</label>
+    <select id="categorySelect" [(ngModel)]="selectedCategory" (change)="getQuestionsByCategory()" required>
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+  </div>
+
+  <div class="container" *ngIf="questions">
+    <h3 class="text-center mb-4">Questions List</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Question</th>
+        <th scope="col">Options</th>
+        <th scope="col">Correct Answer</th>
+        <th scope="col">Difficulty Level</th>
+        <th scope="col">Category</th>
+        <th scope="col">Score</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let question of questions">
+        <th scope="row">{{ question.id }}</th>
+        <td>{{ question.questionTitle }}</td>
+        <td>
+          <ul>
+            <li>{{ question.option1 }}</li>
+            <li>{{ question.option2 }}</li>
+            <li>{{ question.option3 }}</li>
+            <li>{{ question.option4 }}</li>
+          </ul>
+        </td>
+        <td>{{ question.rightAnswer }}</td>
+        <td>{{ question.difficultylevel }}</td>
+        <td>{{ question.category }}</td>
+        <td>{{ question.score }}</td>
+        <td>
+          <button [routerLink]="['/updatQuestion',question.id]">Modifer</button>
+          <button (click)="supprimer(question.id)">Supprimer</button>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

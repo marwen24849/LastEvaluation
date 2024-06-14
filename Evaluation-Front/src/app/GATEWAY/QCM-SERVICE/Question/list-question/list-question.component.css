@@ -1,0 +1,117 @@
+/* Table styling */
+
+table.table {
+    width: 100%; /* Adjust width as needed */
+    border-collapse: collapse;
+    margin: 20px auto;
+  }
+  
+  table.table thead th,
+  table.table tbody td,
+  table.table th {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left; 
+  }
+  
+  table.table thead th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  /* Optional styling for specific columns */
+  
+  table.table tbody td:nth-child(2) { /* Target question title column */
+    font-weight: bold;
+    color: #333;
+  }
+  
+  table.table tbody td:nth-child(4) {
+    color: #009933; /* Green for correct answer */
+  }
+  
+  
+  
+  table.table tbody tr:hover {
+    background-color: #eee;
+  }
+ 
+  
+  /* Optional hover effect for both buttons */
+  button:hover {
+    opacity: 0.8; /* Slightly reduce opacity on hover */
+  }
+  
+  .modifier-btn,
+.supprimer-btn {
+  size: 10px;
+  margin-right: 10px; 
+  padding: 8px 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 5px; /* Espacement entre les boutons */
+  font-size: 14px;
+}
+
+.modifier-btn {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.supprimer-btn {
+  background-color: #f44336; /* Red */
+  color: white;
+}
+
+.btntd {
+  display: flex; /* Enable flexbox layout for table cells */
+  align-items: center; /* Align buttons vertically in the center */
+  justify-content: center;
+  text-align: center;
+}
+
+option {
+  padding: 8px 12px;
+  font-size: 16px;
+  color: #495057;
+  background-color: #fff;
+}
+
+option:hover {
+  background-color: #f8f9fa;
+}
+.containerSelect {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.invalid-feedback {
+  display: block; 
+  color: #dc3545;
+}
+
+.form-control {
+  border-radius: 20px;
+}
+
+form {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+}
+
+select.form-control {
+  margin-top: 5px;
+  border-radius: 20px;
+}
+
+label {
+  margin-bottom: 5px; 
+}
+  

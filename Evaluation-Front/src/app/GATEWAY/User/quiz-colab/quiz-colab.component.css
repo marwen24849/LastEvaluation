@@ -1,0 +1,49 @@
+/* Style pour le tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  /* Style pour l'en-tête du tableau */
+  thead {
+    background-color: #007bff; /* Couleur de fond de l'en-tête */
+    color: #fff; /* Couleur du texte de l'en-tête */
+  }
+  
+  /* Style pour les cellules de l'en-tête */
+  th {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Style pour les lignes impaires du tableau */
+  tbody tr:nth-child(odd) {
+    background-color: #f2f2f2; /* Couleur de fond des lignes impaires */
+  }
+  
+  /* Style pour les cellules du corps du tableau */
+  td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  
+
+  .h3{
+    color: #999; /* Couleur de texte gris */
+    font-style: italic; /* Style italique */
+    text-align: center;
+  }
+
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+  

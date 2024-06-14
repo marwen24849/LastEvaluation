@@ -1,0 +1,285 @@
+<div class="wrapper">
+    <!-- Sidebar -->
+    <aside id="sidebar">
+        <div class="h-100">
+            <div class="sidebar-logo">
+                <a href="#">Re/Upskill</a>
+            </div>
+
+            <ng-container *ngIf="kc.isLoggedIn()">
+           
+            <ul class="sidebar-nav">
+                <li class="sidebar-header">
+                    Tools & Components
+                </li>
+                
+                <ng-container *ngIf="test()">
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link" routerLink="/ProfileUser">
+                       
+                        <i class="bi bi-person pe-2"></i>
+                        Profile
+                    </a>
+                </li>
+
+                
+
+              
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link" routerLink="/listUser">
+                        <i class="bi bi-person-lines-fill pe-2"></i>
+                        Collaborateurs
+                    </a>
+                </li>
+
+
+
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard"
+                        aria-expanded="false" aria-controls="dashboard">
+                        <i class="bi bi-people pe-2"></i>
+                        Equipes
+                    </a>
+                    <ul id="dashboard" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link" routerLink="/addEquipe">
+                                <i class="fa-regular fa-file-lines pe-4"></i>
+                                Ajouter équipe
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link" routerLink="/Equips">
+                                <i class="fa-regular fa-file-lines pe-4"></i>
+                                Affecter Quiz Equipe
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#Quiz"
+                        aria-expanded="false" aria-controls="Quiz">
+                       
+                        <i class="bi bi-question-circle pe-2"></i>
+                        Quiz
+                    </a>
+                    <ul id="Quiz" class="sidebar-dropdown list-unstyled collapse" >
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" routerLink="/AjoutQuestion">
+                                <i class="fa-regular fa-file-lines pe-4"></i>
+                                Créer une question</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" routerLink="/AjoutQuiz">
+                                <i class="fa-regular fa-file-lines pe-4"></i>
+                                Créer un quiz</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" routerLink="/listQuiz">
+                                <i class="fa-regular fa-file-lines pe-4"></i>
+                                Liste des quiz</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+
+                        
+                        
+                  
+                
+
+
+
+               
+
+
+
+
+                
+
+
+
+                
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#multi"
+                        aria-expanded="false" aria-controls="multi">
+                        <i class="bi bi-book-half pe-2"></i>
+                        compétences 
+                        
+                    </a>
+                   
+                            <ul id="multi" class="sidebar-dropdown list-unstyled collapse">
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link pe-4" routerLink="/ajoutCompetence"><i class="fa-regular fa-file-lines pe-4"></i>Créer compéteces</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link pe-4" routerLink="/skills"><i class="fa-regular fa-file-lines pe-4"></i>Liste de Compétences</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ng-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    <ng-container *ngIf="!test()">
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link" routerLink="/ProfileUser">
+                               
+                                <i class="bi bi-person pe-2"></i>
+                                Profile
+                            </a>
+                        </li>
+
+        
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#Quiz"
+                                aria-expanded="false" aria-controls="Quiz">
+                               
+                                <i class="bi bi-question-circle pe-2"></i>
+                                Quiz
+                            </a>
+                            <ul id="Quiz" class="sidebar-dropdown list-unstyled collapse" >
+                                
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link" routerLink="/QuizHestorique">
+                                        <i class="fa-regular fa-file-lines pe-4"></i>
+                                        Historique</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a class="sidebar-link" routerLink="/QuizUser">
+                                        <i class="fa-regular fa-file-lines pe-4"></i>
+                                        Voir toutes les Quiz</a>
+                                </li>
+                            </ul>
+                        </li>
+        
+                        
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#multi"
+                                aria-expanded="false" aria-controls="multi">
+                                <i class="bi bi-book-half pe-2"></i>
+                                Formations 
+                                
+                            </a>
+                           
+                                    <ul id="multi" class="sidebar-dropdown list-unstyled collapse">
+                                        <li class="sidebar-item">
+                                            <a href="#" class="sidebar-link pe-4" routerLink="/formations"><i class="fa-regular fa-file-lines pe-4"></i>Historique Des Formation</a>
+                                        </li>
+                                        <li class="sidebar-item">
+                                            <a href="#" class="sidebar-link pe-4" routerLink="/listFormations"><i class="fa-regular fa-file-lines pe-4"></i>Voir toutes les formations</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ng-container>
+                       
+                    </ul>
+                    
+                </ng-container>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse" data-bs-target="#auth"
+                            aria-expanded="false" aria-controls="auth">
+                            <i class="bi bi-door-open pe-2"></i>
+                            Auth
+                        </a>
+                        <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item" *ngIf=" ! kc.isLoggedIn()">
+                                <a href="#" class="sidebar-link" (click)="login()">
+                                    <i class="fa-regular fa-file-lines pe-4"></i>
+                                    Login</a>
+                            </li>
+                            <li class="sidebar-item" *ngIf="kc.isLoggedIn()">
+                                <a class="sidebar-link" aria-current="page" (click)="onlogOut()">
+                                    <i class="fa-regular fa-file-lines pe-4"></i>
+                                    LogOut</a>
+                              </li>
+                            <li class="sidebar-item">
+                                <a href="http://localhost:8081/admin/Evaluation/console/" class="sidebar-link pe-4"><i class="fa-regular fa-file-lines pe-4"></i>Admin</a>
+                            </li>
+                        </ul>
+                    </li>
+            
+                
+        </div>
+    </aside>
+    
+    <div class="main">
+        <nav class="navbar navbar-expand px-3 border-bottom">
+            <button class="btn btn-primary" type="button" data-bs-theme="dark">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="navbar-brand" href="#">
+                <img [src]="[lien]" width="50" height="50">
+            </a>
+            
+            <div class="navbar-nav ms-auto" *ngIf="kc.isLoggedIn()">
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="QuizDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Quiz
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="QuizDropdown">
+                        <!-- Ajoutez ici les liens vers les formations -->
+                        <li><a class="dropdown-item" routerLink="/QuizHestorique">Historique</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" routerLink="/QuizUser">Voir toutes les Quiz</a></li>
+                    </ul>
+                </div>
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="formationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Formations
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="formationDropdown">
+                        <!-- Ajoutez ici les liens vers les formations -->
+                        <li><a class="dropdown-item" routerLink="/formations">Historique Des Formation</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" routerLink="/listFormations">Voir toutes les formations</a></li>
+                    </ul>
+                </div>
+                <div class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person"></i> {{profile?.firstName}}
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        <li><a class="dropdown-item" routerLink="/ProfileUser">Mon profil</a></li>
+                        <li><a class="dropdown-item" routerLink="dash" *ngIf="test()">Paramètres</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" (click)="onlogOut()">Déconnexion</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <main class="content py-1">
+            <div class="containe px-1">
+                <div class="mb-3">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+

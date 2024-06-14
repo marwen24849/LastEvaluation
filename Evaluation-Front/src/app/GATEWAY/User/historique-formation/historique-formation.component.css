@@ -1,0 +1,53 @@
+/* list-formation.component.css */
+
+/* Style pour chaque élément de la liste */
+.list-group-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    transition: box-shadow 0.3s ease;
+    margin-bottom: 5px;
+}
+
+/* Effet de survol */
+.list-group-item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour le titre */
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+/* Style pour la description */
+.card-text {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.h3{
+    color: #999; /* Couleur de texte gris */
+    font-style: italic; /* Style italique */
+    text-align: center;
+  }
+
+/* Réactivité */
+@media (max-width: 768px) {
+    .list-group-item {
+        padding: 10px;
+    }
+    .card-title {
+        font-size: 18px;
+    }
+    .card-text {
+        font-size: 14px;
+    }
+}
+
+
+
+/* Autres styles personnalisés */

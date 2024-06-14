@@ -1,0 +1,228 @@
+table.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px auto;
+}
+
+table.table thead th,
+table.table tbody td,
+table.table th {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+table.table thead th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+
+
+table.table tbody td:nth-child(2) {
+  font-weight: bold;
+  color: #333;
+}
+
+table.table tbody td:nth-child(4) {
+  color: #009933; 
+}
+
+/* Hover effect for rows (optional) */
+
+table.table tbody tr:hover {
+  background-color: #eee;
+}
+
+button:nth-child(3) {
+  background-color: #e74c3c; 
+  color: #fff; 
+}
+
+
+button:hover {
+  opacity: 0.8; 
+}
+
+
+.custom-modal .modal-dialog {
+  margin: auto; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.custom-modal .modal-dialog{
+  max-width: 1200px;
+  
+}
+
+#exampleModal1 .modal-dialog{
+  max-width: 1000px;
+}
+
+.modal-fade.custom-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+}
+
+
+.a {
+  text-decoration: none;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.a:hover {
+  text-decoration: underline; 
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.invalid-feedback {
+  display: block; 
+  color: #dc3545;
+}
+
+
+
+.form-control {
+  border-radius: 20px;
+}
+
+form {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+}
+
+select.form-control {
+  margin-top: 5px;
+  border-radius: 20px;
+}
+
+label {
+  margin-bottom: 5px; 
+}
+
+
+#container_search {
+  display: flex;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Déplace la zone de recherche à droite */
+}
+
+input[type="text"] {
+  flex-grow: 2;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+input[type="text"], button {
+  height: 30px; /* Réduit la hauteur de la zone de recherche et du bouton */
+  padding: 5px 10px; /* Ajuste le rembourrage */
+  border: 1px solid #ccc; /* Ajoute une bordure */
+  border-radius: 5px; /* Ajoute des coins arrondis */
+}
+
+.h3{
+  color: #999; /* Couleur de texte gris */
+  font-style: italic; /* Style italique */
+  text-align: center;
+}
+
+.filter-bar {
+  margin-top: 20px;
+}
+
+/* Style de la liste déroulante */
+#roleFilter {
+  width: 200px;
+ 
+  
+}
+
+/* Style du select */
+#roleFilter {
+  width: 200px; /* Largeur du select */
+}
+
+/* Style des options */
+#roleFilter option {
+  font-size: 14px; /* Taille de la police */
+  background-color: #fff; /* Couleur de fond */
+  color: #000; /* Couleur du texte */
+}
+
+/* Style de l'option sélectionnée */
+#roleFilter option:checked {
+  background-color: #007bff; /* Couleur de fond de l'option sélectionnée */
+  color: #fff; /* Couleur du texte de l'option sélectionnée */
+}
+
+/* Style de la flèche déroulante */
+#roleFilter::-ms-expand {
+  display: none; /* Masquer la flèche déroulante pour IE */
+}
+
+#roleFilter::after {
+  content: '\25BC'; /* Utiliser une flèche personnalisée pour les autres navigateurs */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Style du select lorsqu'il est en focus */
+#roleFilter:focus {
+  outline: none; /* Supprimer l'outline */
+  box-shadow: none; /* Supprimer l'ombre */
+}
+
+
+
+.custom-modal .list-group-item {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.custom-modal .list-group-item:hover {
+  background-color: #f8f9fa;
+}
+
+.list-group-item-success {
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+  margin-bottom: 5px;
+}
+
+.list-group-item-warning {
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.list-group-item-action {
+  transition: all 0.3s ease;
+}
+
+.list-group-item-action:hover {
+  background-color: #f8f9fa;
+}
+
+
+#competence .modal-dialog{
+  max-width: 500px;
+}

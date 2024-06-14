@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <h2 class="text-center mb-4">Créer un quiz</h2>
+        <form (ngSubmit)="onSubmit()" class="needs-validation" #questionForm="ngForm" novalidate>
+          <div class="form-group">
+            <label for="title">Titre:</label>
+            <input type="text" class="form-control" id="title" [(ngModel)]="quiz.title" name="title" required>
+            <div class="invalid-feedback" *ngIf="questionForm.submitted && !quiz.title">Veuillez fournir un titre.</div>
+          </div>
+
+          <div class="form-group">
+            <label for="minimumSuccessPercentage">Pourcentage minimum de réussite:</label>
+            <input type="number" class="form-control" id="minimumSuccessPercentage" [(ngModel)]="quiz.minimumSuccessPercentage" name="minimumSuccessPercentage" required>
+            <div class="invalid-feedback" *ngIf="questionForm.submitted && !quiz.minimumSuccessPercentage">Veuillez fournir un pourcentage minimum de réussite.</div>
+        </div>
+        
+
+          <div class="form-group">
+            <label for="category">Catégorie:</label>
+            <select class="form-select" id="category" [(ngModel)]="quiz.category" (change)="nbQues()" name="category" required>
+              <option value="" disabled selected>Choisissez une catégorie</option>
+              <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+            </select>
+            <div class="invalid-feedback" *ngIf="questionForm.submitted && !quiz.category">Veuillez sélectionner une catégorie.</div>
+          </div>
+          
+          <div class="form-group">
+            <label for="category">Level:</label>
+            <select class="form-select" id="category" [(ngModel)]="quiz.difficultylevel" (change)="nbQues()" name="category" required>
+              <option value="" disabled selected>Choisissez une Level</option>
+              <option *ngFor="let level of levels" [value]="level">{{ level }}</option>
+            </select>
+            <div class="invalid-feedback" *ngIf="questionForm.submitted && !quiz.difficultylevel">Veuillez sélectionner une level.</div>
+          </div>
+
+          
+
+          <div class="form-group">
+            <label for="nbQuestion">Nombre de questions:</label>
+            <input type="number" class="form-control" id="nbQuestion" [(ngModel)]="quiz.nbQuestion" min="0" max="{{nb}}" name="nbQuestion" required>
+            <div class="invalid-feedback" *ngIf="questionForm.submitted && !quiz.nbQuestion">Veuillez fournir un nombre de questions valide.</div>
+          </div>
+
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="showBadgeType" [(ngModel)]="showBadgeType" name="show">
+            <label class="form-check-label" for="showBadgeType">
+              Avec Badge
+            </label>
+          </div>
+  
+          <!-- Sélection du type de badge (affichée si la checkbox est cochée) -->
+          <div class="form-group" *ngIf="showBadgeType">
+            <label for="title">Badge Nom:</label>
+            <input type="text" class="form-control" id="title" [(ngModel)]="quiz.name" name="name" required>
+            <div class="invalid-feedback" *ngIf="questionForm.submitted && !quiz.name && showBadgeType">Veuillez fournir un nom.</div>
+          </div>
+
+          <div class="form-group" *ngIf="showBadgeType">
+            <label for="title">Description:</label>
+            <input type="text" class="form-control" id="title" [(ngModel)]="quiz.description" name="description" required>
+            <div class="invalid-feedback" *ngIf="questionForm.submitted && !quiz.name && showBadgeType">Veuillez fournir un nom.</div>
+          </div>
+
+          <div class="form-group" *ngIf="showBadgeType">
+            <label for="badgeType">Type de Badge:</label>
+            <select class="form-select" id="badgeType" [(ngModel)]="quiz.type" name="badgeType" required>
+              <option value="" disabled selected>Choisissez un type de badge</option>
+              <option value="BRONZE">Bronze</option>
+              <option value="SILVER">Silver</option>
+              <option value="GOLD">Gold</option>
+            </select>
+            <div class="invalid-feedback" *ngIf="questionForm.submitted && !quiz.type && showBadgeType">Veuillez sélectionner un type de badge.</div>
+          </div>
+
+          
+
+          
+          <button type="submit" class="btn btn-primary btn-block">Ajouter</button>
+        </form>
+      </div>
+      <button  class="btn btn-secondary btn-block" [routerLink]="['/listQuiz']">Liste des quiz</button>
+    </div>
+  </div>
+  
+
+
+  
+  

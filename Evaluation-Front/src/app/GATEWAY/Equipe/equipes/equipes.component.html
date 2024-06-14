@@ -1,0 +1,174 @@
+<br>
+<div class="container" id="container_serach">
+    <div class="search-bar">
+      <input type="text"  placeholder="Rechercher par nom d'équipe" name="username" [(ngModel)]="namequipe" (ngModelChange)="filteredEquips()">
+    </div>
+</div>
+<br>
+<div class="container">
+    <h3 class="h3">Liste des équipes</h3>
+    <div class="row">
+      <div class="col">
+          <ul class="list-group">
+              <li *ngFor="let equipe of getItems()" class="list-group-item">
+                  <div class="d-flex justify-content-between align-items-center">
+                      <div>
+                          <h5 class="card-title">{{ equipe.name }}</h5>
+                          <p class="card-text"><strong>Département:</strong> {{ equipe.department }}</p>
+                          <p class="card-text"><strong>Membres:</strong> <a class="a" (click)="showUsers(equipe.users,equipe.id)" data-toggle="modal" data-target="#userModal">
+                              Membres de l'équipe
+                            </a></p>
+                         
+                      </div>
+                      <div>
+                          <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#addUserModal" (click)="getUsersnoInscritEquipeId(equipe.id)">
+                            <i class="bi bi-person-plus"></i>
+                          </button>
+                          <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#quizModal" (click)="listQuiz(equipe.id)"><i class="bi bi-question"></i></button>
+                      </div>
+                  </div>
+              </li>
+          </ul>
+          <div class="pagination justify-content-end">
+            <span>{{currentPage}} / {{totalPages}}</span>
+            <button (click)="prevPage()" [disabled]="startIndex === 0">Précédent</button>
+            <button (click)="nextPage()" [disabled]="endIndex >= equipes.length">Suivant</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<div class="modal fade custom-modal" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addUserModalLabel">Ajouter un utilisateur à l'équipe</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container" id="container_serach">
+          <div class="search-bar">
+            <input type="text"  placeholder="Rechercher par nom d'utilisateur" name="username" [(ngModel)]="username" (ngModelChange)="filteredUsers()" >
+          </div>
+      </div>
+      <br>
+        <ul class="list-group">
+          <li *ngFor="let user of users" class="list-group-item">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="card-body">
+                  <h5 class="card-title">{{ user.firstName }} {{ user.lastName }}</h5>
+                  <p class="card-text">Username: {{ user.username }}</p>
+                  <p class="card-text">Email: {{ user.email }}</p>
+                </div>
+                  <div>
+                      <button class="btn btn-primary" type="button"  (click)="addUserToEquipe(user.id)">Ajouter</button>
+                  </div>
+              </div>
+          </li>
+      </ul>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+  
+  <!-- Modal -->
+<div class="modal fade custom-modal" id="userModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Membres de l'équipe</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <h3 class="text-center mb-4">Membres de l'équipe</h3>
+          <div class="row">
+            <div class="col-md-6" *ngFor="let user of users">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <h5 class="card-title">{{ user.firstName }} {{ user.lastName }}</h5>
+                  <p class="card-text">Username: {{ user.username }}</p>
+                  <p class="card-text">Email: {{ user.email }}</p>
+                </div>
+                <div class="card-footer d-flex justify-content-end"> <!-- Ajout de la classe "d-flex justify-content-end" -->
+                  <button class="btn btn-danger" type="button"  (click)="supprimeruser(user.id)">Supprimer</button> <!-- Bouton aligné à droite -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+  <div class="modal fade custom-modal" id="quizModal" tabindex="-1" role="dialog" aria-labelledby="quizModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="quizModalLabel">Liste des Quiz</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul class="list-group">
+            <li *ngFor="let quiz of quizzes" class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 class="card-title">{{ quiz.title }}</h5>
+                        <p class="card-text"><strong>Category:</strong> {{ quiz.category }}</p>
+                        <p class="card-text"><strong>Difficulté:</strong>{{ quiz.difficultylevel }}</p>
+                        <p class="card-text"><strong>Questions:</strong> <a class="a" data-toggle="modal" data-target="#Questions" (click)="Questions(quiz.questions)">
+                          List Questions
+                        </a></p>
+                    </div>
+                    <button class="btn btn-primary" type="button" class="btn btn-primary float-right"  (click)="addQuizToUsersEquipe(quiz.id, equipeId )" >Affecter</button>
+                </div>
+            </li>
+        </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade custom-modalQuestions" id="Questions" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Questions</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+          <ul class="list-group">
+            <li *ngFor="let question of questions" class="list-group-item">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5 class="card-title">{{ question.questionTitle }}</h5>
+                        <p class="card-text"><strong>Category:</strong>  {{ question.category }}</p>
+                        <p class="card-text"><strong>Difficulté:</strong>  {{ question.difficultylevel }}</p>
+                        <p class="card-text"><strong>Score:</strong> {{question.score}} </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>

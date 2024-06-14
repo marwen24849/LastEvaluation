@@ -1,0 +1,61 @@
+<div class="quiz-container">
+    <h3 class="quiz-title">Quiz sur {{quiz.title}}</h3>
+    <div *ngFor="let question of questions" class="question">
+      <h3 class="question-title">{{ question.questionTitle }}</h3>
+      <div class="option">
+        <input type="radio" name="option{{question.id}}" [value]="question.option1" (change)="updateResponse(question, $event)">
+        <label>{{ question.option1 }}</label>
+      </div>
+      <div class="option">
+        <input type="radio" name="option{{question.id}}" [value]="question.option2" (change)="updateResponse(question, $event)">
+        <label>{{ question.option2 }}</label>
+      </div>
+      <div class="option">
+        <input type="radio" name="option{{question.id}}" [value]="question.option3" (change)="updateResponse(question, $event)">
+        <label>{{ question.option3 }}</label>
+      </div>
+      <div class="option">
+        <input type="radio" name="option{{question.id}}" [value]="question.option4" (change)="updateResponse(question, $event)">
+        <label>{{ question.option4 }}</label>
+      </div>
+    </div>
+    <button class="submit-button" type="submit" (click)="submitAllResponses()">Submit</button>
+  </div>
+
+  <!-- <div class="container">
+    <h1 class="quiz-title">Quiz sur la Géographie</h1>
+  
+    <form #quizForm="ngForm" (ngSubmit)="submitAllResponses()">
+      <div class="question" *ngFor="let question of questions">
+        <h3 class="question-title">{{ question.questionTitle }}</h3>
+  
+        <div class="form-group">
+          <ul class="list-group">
+            <li class="list-group-item">
+              <input type="radio" name="option{{question.id}}" id="option-{{question.id}}-1"
+                     [value]="question.option1" (change)="updateResponse(question, $event)">
+              <label for="option-{{question.id}}-1">{{ question.option1 }}</label>
+            </li>
+            <li class="list-group-item">
+              <input type="radio" name="option{{question.id}}" id="option-{{question.id}}-2"
+                     [value]="question.option2" (change)="updateResponse(question, $event)">
+              <label for="option-{{question.id}}-2">{{ question.option2 }}</label>
+            </li>
+            <li class="list-group-item">
+              <input type="radio" name="option{{question.id}}" id="option-{{question.id}}-3"
+                     [value]="question.option3" (change)="updateResponse(question, $event)">
+              <label for="option-{{question.id}}-3">{{ question.option3 }}</label>
+            </li>
+            <li class="list-group-item">
+              <input type="radio" name="option{{question.id}}" id="option-{{question.id}}-4"
+                     [value]="question.option4" (change)="updateResponse(question, $event)">
+              <label for="option-{{question.id}}-4">{{ question.option4 }}</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary submit-button">Submit All Responses</button>
+    </form>
+  </div> -->
+  
